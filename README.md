@@ -14,8 +14,8 @@ The U.S. Census Bureau is a government agency with the United States designed to
 2️⃣. Organize and analyze the data to determine the type of tax that states generate the most capital from. 
 
 **Questions for Analysis** 
-- What type of tax generates the most capital per year? The least? And on average?
-- What years had the highest taxes collected? The least? The average? 
+- What type of tax generates the most capital per year? The least?
+- What years had the highest taxes collected? The least?
 
 **Key Stakeholders** \
 Key stakeholders in this analysis would include the Internal Revenue Service (IRS), and the U.S. Department of Treasury.
@@ -44,33 +44,30 @@ Data was cleaned in Google Sheets using the following steps:
 ### 📊 Analysis of the Data
 To analyze the data, I tackled each question as shown below as well the analytical work I performed below.  
 - *What type of tax generates the most capital per year? What about the least?* 
-Starting with the clean data, I created 4 bar graphs that each displyed the types of taxes and the amount of money they generated yearly. My results are shown below:
+Starting with the clean data, I pulled information from the *year, meaning of aggregate description,* and the *amount formatted* columns. With this information, I created 4 bar graphs that displyed the types of taxes and the amount of money they generated per year. The results are shown below:
 
-````
-SELECT 
-borough, count(*)
-FROM `bigquery-public-data.new_york_mv_collisions.nypd_mv_collisions`
-GROUP BY borough
-ORDER BY count(*) DESC
- ````
-This query generated the following results: 
-![Borough Frequency Table](bq-results-20210805-114854-8twtisrcwm8v.csv) 
+<p align="center">
+  <img src="Taxes_Collected_Years.png" alt="Taxes collected per year"/>
+</p>
 
-These results are shown visually with the following data visualization using Tableau.
+As shown by the image above, the most profitable tax collected every year is the 'Sales and Gross Receipts Tax' which is follwed very closely behind by the 'Income Tax'. Conversely, it can be seen that the taxes that generaates the least amount of capital are 'Property Taxes' and 'Other Taxes'. As shown in the graph, however, these two taxes generate very similar amounts of money and they are unable to be differentiated from one another easily. To determine which tax generates the least amount of money, I pulled the actual amounts from 'Property Taxes' and 'Other Taxes' for each year and displayed them in a smaller table below. Included in the table is a new column titled 'Least Capital' that returns the minumum value comparing 'Property Taxes' and 'Other Taxes'. 
 
-![Borough Frequency Chart](borough_frequency.png) 
- 
-As you can see above, the frequency chart above produces a table where each borough is ranked by the frequency of motor collisions present. As abundantly clear, the vast majority of motor collisions are not reported to a borough; this is shown by the frequencies found in the null category. 
+[Property Tax vs Other Tax](Property_Tax_Other_Tax_Yearly.csv)
 
-However, given that the null category is excluded from results, rankings of boroughs are shown as follows: 
+As shown in the table, the least profitable tax are property taxes every year from 2020 to 2016. 
 
-![Borough Frequency Chart Without Null](borough_frequency_excludenull.png)
+- *What years had the highest taxes collected? The least?*
+In order to determine which year had the highest amount of taxes collected, I switched my attention to the Total Taxes value for each year. In order to calulate the highest and lowest tax years, I generated a bar graph that compared total capital generated per year. The results are shown below. 
 
-Occurrence of Motor Collisions occur in descending order starting with Brooklyn, Queens, Manhattan, Bronx, and then Staten Island.
+<p align="center">
+  <img src="Capital_Generated_per_Year.png" alt="Total taxes per year"/>
+</p>
 
-### ✳️ Recommendations for how to reduce motor collisions in high-risk areas
+As shown in the bar graph above, 2019 generated the most taxes in total. Contrastedly, 2016 generated the least amount of taxes. 
 
-My recommendations are to prioritize community resources and officers for the Brooklyn, Queens, and Manhattan boroughs because they have the most motor collisions. By having community engagement events, general education (such as reminders to buckle up and reduce distractions while on the road) and an increase in officers in these areas, the amount of motor collisions would likely fall.
+### 🎯 Conclusion
+
+To conclude, the most profitable tax that generate the most capital is the 'Sales and Gross Receipts Tax' while the tax that generates the least amount of money is the "Property Tax'. Additinoally, the most profitable Tax Year was 2019 and the least profitable tax year was 2016. 
 
 ### 🚩 Follow-Up Questions 
 
