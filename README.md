@@ -68,9 +68,3 @@ As shown in the bar graph above, 2019 generated the most taxes in total. Contras
 ### 🎯 Conclusion
 
 To conclude, the most profitable tax that generate the most capital is the 'Sales and Gross Receipts Tax' while the tax that generates the least amount of money is the "Property Tax'. Additinoally, the most profitable Tax Year was 2019 and the least profitable tax year was 2016. 
-
-### 🚩 Follow-Up Questions 
-
-1. Is there a correlation between motor collisions and street infrastructure?
-2. What are the populations of each borough? And does this impact the amount of motor collisions?
-3. Is there a correlation between zip code and motor collisions? Is there a correlation between month and motor collisions?
