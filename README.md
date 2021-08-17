@@ -7,9 +7,10 @@ output: html_document
 author: China Gaines
 date: 08-13-2021
 ---
+![Banner_Image](banner_img.jpg)
 
 ## Introduction 🚗
-The U.S. Census Bureau is a government agency with the United States designed to serve the country with information about it's population and the economy. With the United States boasting a population of 328.2 million people (est. 2018 census), there is an increased interest in how the public finance and employment data for of the nation's state and local government sector. This case study explores the amount of state tax collected depending on what kind of type of tax.
+The U.S. Census Bureau is a government agency with the United States designed to serve the country with information about it's population and the economy. With the United States boasting a population of 328.2 million people (est. 2018 census), there is an increased interest in how the public finance and employment data for of the nation's state and local government sector. This case study explores the amount of state tax collected depending on what kind of type of tax. \
 
 **Business Task** \
 1️⃣. Use the 'State Tax Collections by Category: US and States 2016 - 2020' found on the U.S. Census Bureau website. \
@@ -17,14 +18,14 @@ The U.S. Census Bureau is a government agency with the United States designed to
 
 
 **Questions for Analysis** 
-- What type of tax generates the most capital per year? The least? And on average? 
-- What years had the highest taxes collected? The least? The average? 
+- What type of tax generates the most capital per year? The least? And on average? \
+- What years had the highest taxes collected? The least? The average? \
 
 **Key Stakeholders** \
-Key stakeholders in this analysis would include the Internal Revenue Service (IRS), and the U.S. Department of Treasury,. 👥
+Key stakeholders in this analysis would include the Internal Revenue Service (IRS), and the U.S. Department of Treasury.
 
 **Data Source**\
-The [NYPD Motor Vehicle Collision](https://data.cityofnewyork.us/Public-Safety/Motor-Vehicle-Collisions-Crashes/h9gi-nx95) dataset includes details of Motor Vehicle Collisions in New York City provided by the Police Department (NYPD) from 2012 to the present. This dataset is updated daily. It includes information such as borough, zip_code, contributing factors, and injured/fatality statistics.
+The [State Tax Collections by Category: US and States 2016 - 2020](https://data.census.gov/cedsci/table?q=United%20States&tid=GOVSTIMESERIES.GS00TC02&hidePreview=true) dataset includes details about the public finance and public employment data for the U.S. national state and local government sector. This data was released on June 21st, 2021 and it comes from the census of governments and its annual files related on a flow basis. Information in this dataset include geographic area name, year, meaning of survey component, aggregate description, meaning of aggregate description, meaning of type of government, and amount formatted. \
 
 This dataset **ROCCC**s, meaning that it is *Reliable*, *Original*, *Comprehensive*, *Current*, and *Cited*.
 
@@ -32,13 +33,13 @@ This dataset **ROCCC**s, meaning that it is *Reliable*, *Original*, *Comprehensi
 
 ### 📚 Preparation of the Data 
 
-To begin with preparation, the dataset ['Motor Vehicle Collisions - Crashes'](https://data.cityofnewyork.us/Public-Safety/Motor-Vehicle-Collisions-Crashes/h9gi-nx95) was opened from Google's BigQuery public databases for cleaning and analysis. 
+To begin with preparation, the dataset ['State Tax Collection by Category: US and States 2016 - 2020'](https://data.census.gov/cedsci/table?q=United%20States&tid=GOVSTIMESERIES.GS00TC02&hidePreview=true) was downloaded from ['Data.Census.gov'](data.census.gov)and uploaded into Google Sheets for cleaning and analysis. 
 
 **Files used included the following:** \
--Motor_Vehicle_Collision_-_Crashes.csv
+-State_Tax_Collection_2016-2020.csv
 
 ### 📈 Processing of the Data 
-Data was cleaned using SQL (bigquery) using the following steps: 
+Data was cleaned in Google Sheets using the following steps: 
 1. Checked for duplicates using the count(distinct(unique_key)) functions. No duplicates were found.
 2. Filtered and Sorted Data 
 
