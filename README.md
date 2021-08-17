@@ -1,33 +1,29 @@
 # US-State-Tax-Collections
 Case Study 3: Correlation between type of tax collected (property, income, ect.) and the amounts collected.
 
----
-title: "US-State-Tax-Collections" 
-output: html_document
-author: China Gaines
-date: 08-13-2021
----
-![Banner_Image](banner_img.jpg)
+<p align="center">
+  <img src="banner_img.jpg" alt="banner image"/>
+  <p align="center">Photo credit to <a href="https://www.pexels.com/photo/calculator-and-pen-on-table-209224/">Pixabay</a></p>
+</p>
 
-## Introduction 🚗
-The U.S. Census Bureau is a government agency with the United States designed to serve the country with information about it's population and the economy. With the United States boasting a population of 328.2 million people (est. 2018 census), there is an increased interest in how the public finance and employment data for of the nation's state and local government sector. This case study explores the amount of state tax collected depending on what kind of type of tax. \
+## Introduction 📝
+The U.S. Census Bureau is a government agency with the United States designed to serve the country with information about it's population and the economy. With the United States boasting a population of 328.2 million people (est. 2018 census), there is an increased interest in how the public finance and employment data for of the nation's state and local government sector. This case study explores the amount of state tax collected depending on what kind of type of tax. 
 
 **Business Task** \
-1️⃣. Use the 'State Tax Collections by Category: US and States 2016 - 2020' found on the U.S. Census Bureau website. \
-2️⃣. Organize and analyze the data to determine the type of tax that states generate the most capital from. \
-
+1️⃣. Use the *'State Tax Collections by Category: US and States 2016 - 2020'* found on the U.S. Census Bureau website. \
+2️⃣. Organize and analyze the data to determine the type of tax that states generate the most capital from. 
 
 **Questions for Analysis** 
-- What type of tax generates the most capital per year? The least? And on average? \
-- What years had the highest taxes collected? The least? The average? \
+- What type of tax generates the most capital per year? The least? And on average?
+- What years had the highest taxes collected? The least? The average? 
 
 **Key Stakeholders** \
 Key stakeholders in this analysis would include the Internal Revenue Service (IRS), and the U.S. Department of Treasury.
 
 **Data Source**\
-The [State Tax Collections by Category: US and States 2016 - 2020](https://data.census.gov/cedsci/table?q=United%20States&tid=GOVSTIMESERIES.GS00TC02&hidePreview=true) dataset includes details about the public finance and public employment data for the U.S. national state and local government sector. This data was released on June 21st, 2021 and it comes from the census of governments and its annual files related on a flow basis. Information in this dataset include geographic area name, year, meaning of survey component, aggregate description, meaning of aggregate description, meaning of type of government, and amount formatted. \
+The [State Tax Collections by Category: US and States 2016 - 2020](https://data.census.gov/cedsci/table?q=United%20States&tid=GOVSTIMESERIES.GS00TC02&hidePreview=true) dataset includes details about the public finance and public employment data for the U.S. national state and local government sector. This data was released on June 21st, 2021 and it comes from the census of governments and its annual files related on a flow basis. Information in this dataset include *geographic area name, year, meaning of survey component, aggregate description, meaning of aggregate description, meaning of type of government,* and *amount formatted.* 
 
-This dataset **ROCCC**s, meaning that it is *Reliable*, *Original*, *Comprehensive*, *Current*, and *Cited*.
+<p align="center">This dataset <i>ROCCC</i>s, meaning that it is <i>Reliable</i>, <i>Original</i>, <i>Comprehensive</i>, <i>Current</i>, and <i>Cited</i>.</p>
 
 ## The Data Analysis Process
 
@@ -40,15 +36,17 @@ To begin with preparation, the dataset ['State Tax Collection by Category: US an
 
 ### 📈 Processing of the Data 
 Data was cleaned in Google Sheets using the following steps: 
-1. Checked for duplicates using the count(distinct(unique_key)) functions. No duplicates were found.
-2. Filtered and Sorted Data 
+1. Checked for whitespace using the Data &rarr; Data Cleanup tab. No whitespace was found in any of the columns.
+2. Checked for duplicates using the Data &rarr; Data Cleanup tab for column G (Amount Formatted). No duplicates were found.
+3. Defined Column G as currency using the *format as currency* option.
+4. Sorted data in descending order using the 'Year' category 
 
 ### 📊 Analysis of the Data
-To talk about analysis, I split the analytical questions down into **actionable tasks**. These tasks are outlined below as well the analytical work I performed.  
+To analyze the data, I tackled each question as shown below as well the analytical work I performed below.  
+- *What type of tax generates the most capital per year? What about the least?* 
+Starting with the clean data, I created 4 bar graphs that each displyed the types of taxes and the amount of money they generated yearly. My results are shown below:
 
-- *Is there a relationship between motor collisions and borough?* 
- 1. Create a query to calculate the frequency of each borough to determine number of motor collisions in each area. 
- ````
+````
 SELECT 
 borough, count(*)
 FROM `bigquery-public-data.new_york_mv_collisions.nypd_mv_collisions`
